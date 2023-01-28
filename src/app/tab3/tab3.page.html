@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Profile
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        Logout
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://cdn.pixabay.com/photo/2017/03/21/13/27/evil-2162179_960_720.png" />
+    <ion-card-header>
+      <ion-card-title>{{user.username}}</ion-card-title>
+      <ion-card-subtitle>{{user.email}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+<ion-item-divider color="success">
+  <ion-label>
+    <div>
+      <h1 style="text-align:center; font-weight:bolder;">Activity</h1>
+    </div>
+  </ion-label>
+</ion-item-divider>
+<ion-card *ngFor="let blog of userblogs">
+  <ion-card-header>
+    <ion-card-title>{{blog.blogtitle}}</ion-card-title>
+    <ion-card-subtitle>{{blog.blogtime | date}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{blog.blogcontent}}
+  </ion-card-content>
+</ion-card>
+</ion-content>

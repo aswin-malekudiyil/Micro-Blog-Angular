@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon (click)="close()" name="arrow-undo-sharp" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <img alt="Silhouette of mountains" *ngIf="blog.blogfile" [src]="blog.blogfile" />
+    <ion-card-header>
+      <ion-card-title>{{blog.blogtitle}}</ion-card-title>
+      <ion-card-subtitle>{{blog.blogUser}} on {{blog.blogtime | date}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{blog.blogcontent}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
